@@ -27,10 +27,13 @@ const body = document.body;
 const lightTheme = {
     bg: "bg-gray-100",
     text: "text-gray-900",
-    header: "bg-white shadow-md",
+    header: "bg-white text-black hover:text-blue-500 ",
     nav: "bg-gray-100",
     card: "bg-gray-200 hover:bg-gray-300",
-    button: "bg-blue-500 hover:bg-blue-600 text-white"
+    button: "bg-blue-500 hover:bg-blue-600 text-white",
+    main: "bg-blue-500 text-white p-4",
+    card: "bg-gray-200 hover:bg-gray-500"
+
 };
 
 const darkTheme = {
@@ -39,7 +42,9 @@ const darkTheme = {
     header: "bg-stone-900 shadow-lg",
     nav: "bg-gray-900",
     card: "bg-gray-900 hover:bg-gray-700",
-    button: "bg-red-500 hover:bg-red-400 text-white"
+    button: "bg-red-500 hover:bg-red-400 text-white",
+    main: "bg-red-500 text-white p-4",
+    card: "bg-gray-900 hover:bg-gray-700"
 };
 
 let isLightTheme = false;
@@ -54,9 +59,16 @@ colorToggleBtn.addEventListener("click", () => {
 
     document.getElementById("menu").className = `${theme.nav} p-4 space-y-4 md:hidden transition-colors duration-300`;
 
-    document.querySelectorAll(".bg-gray-800").forEach(card => {
-        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform shadow-lg`;
-    });
+    document.getElementById("menu-toggle").className = `${theme.header} md:hidden transition-colors duration-300`;
+
+    document.getElementById("cta-explorar").className = `${theme.main} mt-4 px-6 py-2 rounded font-medium transition-colors duration-300`;
+
+
+
+     document.querySelectorAll(".bg-gray-800").forEach(card => {
+        // Limpiar las clases actuales
+        card.classList.remove('bg-gray-800', 'hover:bg-gray-700', 'rounded-lg', 'p-4', 'text-center', 'transition-transform', 'transform', 'hover:scale-105', 'shadow-lg');
+ç    });
 
     colorToggleBtn.className = `${theme.button} rounded-lg text-xs p-2.5 focus:outline-none focus:ring-4`;
 
@@ -131,9 +143,9 @@ colorToggleBtn.addEventListener("click", () => {
             mapsContainer.innerHTML = "";
             maps.forEach((map) => {
                 const card = document.createElement("div");
-                card.className = "bg-gray-800 p-4 rounded-lg text-center";
+                card.className = "bg-gray-800 p-4 rounded-lg hover:scale-105 text-center";
                 card.innerHTML = `
-                    <img src="${map.splash}" alt="${map.displayName}" class="w-full h-40 object-cover rounded">
+                    <img src="${map.splash}" alt="${map.displayName}" class="w-full h-40 object-cover  rounded">
                     <h3 class="text-white font-bold mt-2">${map.displayName}</h3>
                 `;
                 mapsContainer.appendChild(card);
@@ -147,7 +159,7 @@ colorToggleBtn.addEventListener("click", () => {
             weaponsContainer.innerHTML = "";
             weapons.forEach((weapon) => {
                 const card = document.createElement("div");
-                card.className = "bg-gray-800 p-4 rounded-lg text-center cursor-pointer hover:shadow-lg";
+                card.className = "bg-gray-800 p-4 rounded-lg text-center cursor-pointer hover:scale-105 hover:shadow-lg";
                 card.innerHTML = `
                     <img src="${weapon.displayIcon}" alt="${weapon.displayName}" class="w-full h-40 object-cover rounded">
                     <h3 class="text-white font-bold mt-2">${weapon.displayName}</h3>
