@@ -1,17 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  lightMode:'class',
+  darkMode: 'class',
   content: ["./src/**/*.{html,js}"],
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        black: "#0F1923",
-        red: "#FF4655",
-        gray: "#A9A9A9",
-        darkGray: "#1A1A1A",
-        lightRed: "#FFC0CB",
+      backgroundImage: {
+        'hero-pattern': "url('/img/valorantLanding.jpg');",
       },
     },
   },
   plugins: [],
-};
+}

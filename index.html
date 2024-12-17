@@ -5,46 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valorant Hub Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     
 </head>
-<body class="bg-black text-white light:bg-white light:text-black transition-colors duration-300 ease-in-out">
+<body class=" bg-gray-900  text-white  transition-colors duration-300 ease-in-out">
 
-    <header class="bg-black light:bg-white p-4 flex items-center justify-between shadow-lg transition-colors duration-300">
+    <header class="bg-stone-900   p-4 flex items-center justify-between shadow-lg transition-colors duration-300 ">
         <a href="#main" class="flex items-center space-x-2">
             <img src="img/Logo.jpg" alt="Valorant Logo" class="h-8">
             <span class="font-bold text-lg">Valorant Hub</span>
         </a>
-        <div class="flex items-center space-x-2">
-            <label for="lightMode" class="text-sm">Light Mode</label>
-            <input type="checkbox" id="lightMode" class="form-checkbox h-5 w-5 text-red-500 cursor-pointer focus:ring-red-500 focus:ring-2 rounded">
-        </div>
+        
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0
+                 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 
+                 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 
+                 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+
 
         <nav class="hidden md:flex space-x-6">
-            <a href="#main" class="font-medium hover:text-red-500 transition-colors text-white light:text-black">Inicio</a>
-            <a href="#agents" class="font-medium hover:text-red-500 transition-colors text-white light:text-black">Agentes</a>
-            <a href="#maps" class="font-medium hover:text-red-500 transition-colors text-white light:text-black">Mapas</a>
-            <a href="#weapons" class="font-medium hover:text-red-500 transition-colors text-white light:text-black">Armas</a>
+            <a href="#main" class="font-medium hover:text-red-500 transition-colors text-white ">Inicio</a>
+            <a href="#agents" class="font-medium hover:text-red-500 transition-colors text-white ">Agentes</a>
+            <a href="#maps" class="font-medium hover:text-red-500 transition-colors text-white ">Mapas</a>
+            <a href="#weapons" class="font-medium hover:text-red-500 transition-colors text-white ">Armas</a>
         </nav>
-
-        <button id="menu-toggle" class="text-red-500 hover:text-red-400 transition-colors md:hidden">
+        
+        <button id="menu-toggle" class="text-red-500 hover:text-red-400 transition-colors md:hidden ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="w-8 h-8" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
     </header>
     
-    <nav id="menu" class="hidden bg-gray-900 light:bg-gray-100 p-4 space-y-4 md:hidden transition-colors duration-300">
-        <a href="#main" class="block font-medium hover:text-red-500 transition-colors text-white light:text-black">Inicio</a>
-        <a href="#agents" class="block font-medium hover:text-red-500 transition-colors text-white light:text-black">Agentes</a>
-        <a href="#maps" class="block font-medium hover:text-red-500 transition-colors text-white light:text-black">Mapas</a>
-        <a href="#weapons" class="block font-medium hover:text-red-500 transition-colors text-white light:text-black">Armas</a>
+    <nav id="menu" class="hidden bg-gray-900 p-4 space-y-4 md:hidden transition-colors duration-300">
+        <a href="#main" class="block font-medium hover:text-red-500 transition-colors text-white ">Inicio</a>
+        <a href="#agents" class="block font-medium hover:text-red-500 transition-colors text-white ">Agentes</a>
+        <a href="#maps" class="block font-medium hover:text-red-500 transition-colors text-white ">Mapas</a>
+        <a href="#weapons" class="block font-medium hover:text-red-500 transition-colors text-white ">Armas</a>
     </nav>
     
 <main class="p-4">
     <!-- Página Principal -->
     <section id="main" class="tab">
-        <div class="hero bg-cover bg-center h-64 flex flex-col justify-center items-center rounded-lg relative overflow-hidden" style="background-image: url('img/valorantLanding.jpg');">
+        <div class="hero bg-[url('/img/valorantLanding.jpg')] bg-cover bg-center h-[60vh] flex flex-col justify-center items-center rounded-lg relative overflow-hidden" style="background-image: url('img/valorantLanding.jpg');">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="relative z-10 flex flex-col justify-center items-center h-full">
                 <h1 class="text-2xl md:text-4xl font-bold text-center drop-shadow-md">Domina el campo de batalla</h1>
@@ -53,21 +59,21 @@
         </div>        
         <!-- Quick Links -->
         <section class="grid grid-cols-3 h-32 gap-4 p-4 mt-4">
-            <div class="bg-gray-800 light:bg-gray-200 hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
-                <a href="#agents" class="flex flex-col items-center text-white light:text-black transition-colors">
-                    <img src="img/agentes.png" alt="Agents" class="w-full h-20 object-cover rounded shadow-md">
+            <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
+                <a href="#agents" class="flex flex-col items-center text-white  transition-colors">
+                    <img src="img/agentes.png" alt="Agents" class="w-full h-[14vh] object-cover rounded shadow-md">
                     <p class="mt-2 font-bold text-sm md:text-base">Agentes</p>
                 </a>
             </div>
-            <div class="bg-gray-800 light:bg-gray-200 hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
-                <a href="#maps" class="flex flex-col items-center text-white light:text-black transition-colors">
-                    <img src="img/imagesMaps.jpg" alt="Maps" class="w-full h-20 object-cover rounded shadow-md">
+            <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
+                <a href="#maps" class="flex flex-col items-center text-white  transition-colors">
+                    <img src="img/imagesMaps.jpg" alt="Maps" class="w-full h-[14vh] object-cover rounded shadow-md">
                     <p class="mt-2 font-bold text-sm md:text-base">Mapas</p>
                 </a>
             </div>
-            <div class="bg-gray-800 light:bg-gray-200 hover:bg-gray-700 light:hover:bg-gray-300 rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
-                <a href="#weapons" class="flex flex-col items-center text-white light:text-black transition-colors">
-                    <img src="img/gunsImg.jpg" alt="Weapons" class="w-full h-20 object-cover rounded shadow-md">
+            <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
+                <a href="#weapons" class="flex flex-col items-center text-white  transition-colors">
+                    <img src="img/gunsImg.jpg" alt="Weapons" class="w-full h-[14vh] object-cover rounded shadow-md">
                     <p class="mt-2 font-bold text-sm md:text-base">Armas</p>
                 </a>
             </div>
@@ -77,7 +83,7 @@
    <!-- Agentes -->
 <section id="agents" class="tab hidden py-6">
     <h2 class="text-xl font-bold mb-4 text-center">Agentes</h2>
-    <div id="agents-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 rounded-2xl px-4"></div>
+    <div id="agents-container" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 rounded-2xl px-4"></div>
 </section>
 
 <!-- Detalle de Agente -->
@@ -95,13 +101,13 @@
 <!-- Mapas -->
 <section id="maps" class="tab hidden py-6">
     <h2 class="text-xl font-bold mb-4 text-center">Mapas</h2>
-    <div id="maps-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 rounded-2xl px-4"></div>
+    <div id="maps-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 rounded-2xl px-4"></div>
 </section>
 
 <!-- Armas -->
 <section id="weapons" class="tab hidden py-6">
     <h2 class="text-xl font-bold mb-4 text-center">Armas</h2>
-    <div id="weapons-container" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 rounded-2xl px-4"></div>
+    <div id="weapons-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 rounded-2xl px-4"></div>
 </section>
 
 <!-- Detalle de Arma (Skins) -->
@@ -117,9 +123,8 @@
 
 </main>
 
-<footer class="bg-black light:bg-black text-center p-4 text-gray-500 transition-colors duration-300">
+<footer class="fixed bottom-0 bg-stone-900  text-center p-4 w-full text-gray-500 transition-colors duration-300">
     <p class="text-sm md:text-base">Valorant API Project - Mobile First Design</p>
 </footer>
-
 </body>
 </html>

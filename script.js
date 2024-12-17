@@ -9,25 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const agentDetailContainer = document.getElementById("agent-detail-container");
     const abilityDetailSection = document.getElementById("ability-detail");
     const abilityDetailContainer = document.getElementById("ability-detail-container");
-    const lightModeInput = document.querySelector("#lightMode");
     const menuToggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
+    
+
 
     // Referencias para detalles de armas y skins
     const weaponDetailSection = document.getElementById("weapon-detail");
     const weaponDetailContainer = document.getElementById("weapon-detail-container");
     const weaponSkinDetailSection = document.getElementById("weapon-skin-detail");
     const weaponSkinDetailContainer = document.getElementById("weapon-skin-detail-container");
-
-    // Modo claro
-    lightModeInput?.addEventListener("click", () => {
-        if (lightModeInput.checked) {
-            document.documentElement.classList.remove("dark");
-        } else {
-            document.documentElement.classList.add("dark");
-        }
-    });
-
+    
+    // Dark Mode
+    
     // Mostrar sección y cargar datos
     const showSection = (targetId) => {
         sections.forEach((section) => {
