@@ -55,7 +55,7 @@ colorToggleBtn.addEventListener("click", () => {
     document.getElementById("menu").className = `${theme.nav} p-4 space-y-4 md:hidden transition-colors duration-300`;
 
     document.querySelectorAll(".bg-gray-800").forEach(card => {
-        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform  shadow-lg`;
+        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform shadow-lg`;
     });
 
     colorToggleBtn.className = `${theme.button} rounded-lg text-xs p-2.5 focus:outline-none focus:ring-4`;
