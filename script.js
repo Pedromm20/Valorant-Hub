@@ -48,24 +48,18 @@ let isLightTheme = false;
 colorToggleBtn.addEventListener("click", () => {
     const theme = isLightTheme ? darkTheme : lightTheme;
 
-    // Cambiar clases del body
     body.className = `${theme.bg} ${theme.text} flex flex-col min-h-screen transition-colors duration-300 ease-in-out`;
 
-    // Cambiar clases del header
     document.querySelector("header").className = `${theme.header} p-4 flex items-center justify-between transition-colors duration-300`;
 
-    // Cambiar clases del menú móvil
     document.getElementById("menu").className = `${theme.nav} p-4 space-y-4 md:hidden transition-colors duration-300`;
 
-    // Cambiar clases de las tarjetas
-    document.querySelectorAll(".bg-gray-800, .hover\\:bg-gray-700").forEach(card => {
-        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg`;
+    document.querySelectorAll(".bg-gray-800").forEach(card => {
+        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform  shadow-lg`;
     });
 
-    // Cambiar clases de los botones
     colorToggleBtn.className = `${theme.button} rounded-lg text-xs p-2.5 focus:outline-none focus:ring-4`;
 
-    // Alternar tema
     isLightTheme = !isLightTheme;
 });
 
