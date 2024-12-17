@@ -18,16 +18,15 @@
         </a>
         
         <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-xs p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            CT
         </button>
 
 
         <nav class="hidden md:flex space-x-6">
-            <a href="#main" class="font-medium hover:text-red-500 transition-colors text-white ">Inicio</a>
-            <a href="#agents" class="font-medium hover:text-red-500 transition-colors text-white ">Agentes</a>
-            <a href="#maps" class="font-medium hover:text-red-500 transition-colors text-white ">Mapas</a>
-            <a href="#weapons" class="font-medium hover:text-red-500 transition-colors text-white ">Armas</a>
+            <a href="#main" class="font-medium hover:text-red-500 transition-colors ">Inicio</a>
+            <a href="#agents" class="font-medium hover:text-red-500 transition-colors  ">Agentes</a>
+            <a href="#maps" class="font-medium hover:text-red-500 transition-colors ">Mapas</a>
+            <a href="#weapons" class="font-medium hover:text-red-500 transition-colors  ">Armas</a>
         </nav>
         
         <button id="menu-toggle" class="text-red-500 hover:text-red-400 transition-colors md:hidden ">
@@ -38,10 +37,10 @@
     </header>
     
     <nav id="menu" class="hidden bg-gray-900 p-4 space-y-4 md:hidden transition-colors duration-300">
-        <a href="#main" class="block font-medium hover:text-red-500 transition-colors text-white ">Inicio</a>
-        <a href="#agents" class="block font-medium hover:text-red-500 transition-colors text-white ">Agentes</a>
-        <a href="#maps" class="block font-medium hover:text-red-500 transition-colors text-white ">Mapas</a>
-        <a href="#weapons" class="block font-medium hover:text-red-500 transition-colors text-white ">Armas</a>
+        <a href="#main" class="block font-medium hover:text-red-500 transition-colors  ">Inicio</a>
+        <a href="#agents" class="block font-medium hover:text-red-500 transition-colors ">Agentes</a>
+        <a href="#maps" class="block font-medium hover:text-red-500 transition-colors  ">Mapas</a>
+        <a href="#weapons" class="block font-medium hover:text-red-500 transition-colors  ">Armas</a>
     </nav>
     
 <main class=" flex-1p-4">
@@ -50,7 +49,7 @@
         <div class="hero bg-[url('/img/valorantLanding.jpg')] bg-cover bg-center h-[60vh] flex flex-col justify-center items-center rounded-lg relative overflow-hidden" style="background-image: url('img/valorantLanding.jpg');">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="relative z-10 flex flex-col justify-center items-center h-full">
-                <h1 class="text-2xl md:text-4xl font-bold text-center drop-shadow-md">Domina el campo de batalla</h1>
+                <h1 class="text-2xl md:text-4xl font-bold text-white text-center drop-shadow-md">Domina el campo de batalla</h1>
                 <button class="mt-4 px-6 py-2 bg-red-500 text-white rounded hover:bg-red-400 transition font-medium">Explorar ahora</button>
             </div>
         </div>        
@@ -59,19 +58,19 @@
             <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
                 <a href="#agents" class="flex flex-col items-center text-white  transition-colors">
                     <img src="img/agentes.png" alt="Agents" class="w-full h-[12vh] object-cover rounded shadow-md">
-                    <p class="mt-2 font-bold text-sm md:text-base">Agentes</p>
+                    <p class="mt-2 text-white font-bold text-sm md:text-base">Agentes</p>
                 </a>
             </div>
             <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
                 <a href="#maps" class="flex flex-col items-center text-white  transition-colors">
                     <img src="img/imagesMaps.jpg" alt="Maps" class="w-full h-[12vh] object-cover rounded shadow-md">
-                    <p class="mt-2 font-bold text-sm md:text-base">Mapas</p>
+                    <p class="mt-2 text-white font-bold text-sm md:text-base">Mapas</p>
                 </a>
             </div>
             <div class="bg-gray-800  hover:bg-gray-700  rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg">
                 <a href="#weapons" class="flex flex-col items-center text-white  transition-colors">
                     <img src="img/gunsImg.jpg" alt="Weapons" class="w-full h-[12vh] object-cover rounded shadow-md">
-                    <p class="mt-2 font-bold text-sm md:text-base">Armas</p>
+                    <p class="mt-2 text-white font-bold text-sm md:text-base">Armas</p>
                 </a>
             </div>
         </section>

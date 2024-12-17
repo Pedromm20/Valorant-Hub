@@ -20,50 +20,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const weaponSkinDetailSection = document.getElementById("weapon-skin-detail");
     const weaponSkinDetailContainer = document.getElementById("weapon-skin-detail-container");
     
-    // Dark Mode
-    
-    let themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-    let themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+    const colorToggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
 
-    // Change the icons inside the button based on previous settings
-    if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-        themeToggleLightIcon.classList.remove("hidden");
-    } else {
-        themeToggleDarkIcon.classList.remove("hidden");
-    }
+// Define los temas como clases de Tailwind
+const lightTheme = {
+    bg: "bg-gray-100",
+    text: "text-gray-900",
+    header: "bg-white shadow-md",
+    nav: "bg-gray-100",
+    card: "bg-gray-200 hover:bg-gray-300",
+    button: "bg-blue-500 hover:bg-blue-600 text-white"
+};
 
-    let themeToggleBtn = document.getElementById("theme-toggle");
+const darkTheme = {
+    bg: "bg-gray-900",
+    text: "text-gray-50",
+    header: "bg-stone-900 shadow-lg",
+    nav: "bg-gray-900",
+    card: "bg-gray-900 hover:bg-gray-700",
+    button: "bg-red-500 hover:bg-red-400 text-white"
+};
 
-    themeToggleBtn.addEventListener("click", function () {
-        // toggle icons inside button
-        themeToggleDarkIcon.classList.toggle("hidden");
-        themeToggleLightIcon.classList.toggle("hidden");
+let isLightTheme = false;
 
-        // if set via local storage previously
-        if (localStorage.getItem("color-theme")) {
-            if (localStorage.getItem("color-theme") === "light") {
-                document.documentElement.classList.add("dark");
-                localStorage.setItem("color-theme", "dark");
-            } else {
-                document.documentElement.classList.remove("dark");
-                localStorage.setItem("color-theme", "light");
-            }
+// Función para cambiar el tema
+colorToggleBtn.addEventListener("click", () => {
+    const theme = isLightTheme ? darkTheme : lightTheme;
 
-            // if NOT set via local storage previously
-        } else {
-            if (document.documentElement.classList.contains("dark")) {
-                document.documentElement.classList.remove("dark");
-                localStorage.setItem("color-theme", "light");
-            } else {
-                document.documentElement.classList.add("dark");
-                localStorage.setItem("color-theme", "dark");
-            }
-        }
+    // Cambiar clases del body
+    body.className = `${theme.bg} ${theme.text} flex flex-col min-h-screen transition-colors duration-300 ease-in-out`;
+
+    // Cambiar clases del header
+    document.querySelector("header").className = `${theme.header} p-4 flex items-center justify-between transition-colors duration-300`;
+
+    // Cambiar clases del menú móvil
+    document.getElementById("menu").className = `${theme.nav} p-4 space-y-4 md:hidden transition-colors duration-300`;
+
+    // Cambiar clases de las tarjetas
+    document.querySelectorAll(".bg-gray-800, .hover\\:bg-gray-700").forEach(card => {
+        card.className = `${theme.card} rounded-lg p-4 text-center transition-transform transform hover:scale-105 shadow-lg`;
     });
+
+    // Cambiar clases de los botones
+    colorToggleBtn.className = `${theme.button} rounded-lg text-xs p-2.5 focus:outline-none focus:ring-4`;
+
+    // Alternar tema
+    isLightTheme = !isLightTheme;
+});
+
     
     // Mostrar sección y cargar datos
     const showSection = (targetId) => {
